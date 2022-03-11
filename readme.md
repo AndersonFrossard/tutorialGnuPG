@@ -2,7 +2,7 @@
 
 <h1 align="center">Tutorial GNU PG</h1>
 
-<p align="center">Key commands using GNU PG CLI</p>
+<p align="center">Key commands using GNU PGP CLI</p>
 <!---
 <div align="center"><a href="https://github.com/AndersonFrossard/karoua_youtube_download_gui/raw/main/standalone/youtube_download_v1.2.zip">
 <img src="https://img.shields.io/static/v1?label=Media&labelColor=black&message=Download&color=7159c1&style=for-the-badge&logo=python"/></a>
@@ -14,6 +14,8 @@ Table of contents
 <!--ts-->
 
 - [About](#about)
+- [Concepts](#concepts)
+- [Commands](#commands)
 
 <!---
 - [Features](#features)
@@ -47,6 +49,25 @@ As I say, nothing is faster than a Command Line Interface.
 My main objective here is to give you clear and concise commands
 so you can start using GNUPG right now and visitid this repo 
 as a reference.
+
+## Concepts
+
+**Public key -** Public signature file to be distributed to everyone.
+The PGP software will use this file to verify whether the file you 
+downloaded (lets call it downloaded_file.zip) was signed by 
+the real author.
+
+**Fingerprint -** Obtained by a hash of the Public key. It is a group of 
+the last 4 doublewords of this hash. Its 16 bytes long. Example:
+0x2404C9546E145360
+
+Key ID - These are the last 8 characters of someone´s fingerprint.
+In the above example would be 6E145360.
+
+## Commands
+
+Import a public key: `gpg --import public_key.asc`
+Verify a signed file: `gpg --verify signature_file.sig downloaded_file.zip`
 
 <!---
 Well, only an automated it features a versatile key management system, 
@@ -169,9 +190,9 @@ The hashes must be exactly the same.
 
 ## Public-key
 
-My PGP public key is avaiable at:
+My PGP public key is available at:
 
-[Public Key at Github](https://github.com/AndersonFrossard/karoua_youtube_download_gui/tree/main/standalone/frossard_public_key.asc)
+[Public Key at Github](https://github.com/AndersonFrossard/tutorialGnuPG/blob/main/frossard.public.key.asc)
 
 [PGP Global Directory](https://keyserver2.pgp.com/vkd/DownloadKey.event?keyid=0xB79AAE8846C18DF7)
 
